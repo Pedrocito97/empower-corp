@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -106,8 +107,8 @@ export default function Hero() {
             alignItems: "center",
           }}
         >
-          <a
-            href="#rejoindre"
+          <Link
+            href="/rejoindre"
             style={{
               padding: "14px 32px",
               background: "#c8a97e",
@@ -121,9 +122,9 @@ export default function Hero() {
             }}
           >
             Nous rejoindre
-          </a>
-          <a
-            href="#activite"
+          </Link>
+          <Link
+            href="/activite"
             style={{
               padding: "14px 32px",
               border: "1px solid rgba(238,238,238,0.15)",
@@ -136,7 +137,7 @@ export default function Hero() {
             }}
           >
             En savoir plus
-          </a>
+          </Link>
         </motion.div>
 
         {/* Minimal stats line */}
