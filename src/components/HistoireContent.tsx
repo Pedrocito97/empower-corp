@@ -1,0 +1,113 @@
+"use client";
+
+import AnimatedSection from "./AnimatedSection";
+import Image from "next/image";
+
+const timeline = [
+  { year: "2019", event: "Création d'Empower Corp à Rennes par Tristan Escutary" },
+  { year: "2021", event: "Ouverture de la deuxième agence à Nantes" },
+  { year: "2024", event: "Cap des 50 000 acquisitions clients franchi" },
+  { year: "2026", event: "Expansion prévue vers Angers, Tours et Rouen" },
+];
+
+export default function HistoireContent() {
+  return (
+    <>
+      {/* Founder section */}
+      <section style={{ paddingBottom: "120px" }}>
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+            <AnimatedSection>
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", aspectRatio: "3/4", maxWidth: "420px" }}>
+                <Image
+                  src="/images/tristan-winner.jpg"
+                  alt="Tristan Escutary, fondateur d'Empower Corp"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <p style={{ fontSize: "18px", fontWeight: 600 }}>Tristan Escutary</p>
+                <p style={{ fontSize: "14px", color: "#888", marginTop: "4px" }}>Fondateur &amp; CEO</p>
+              </div>
+            </AnimatedSection>
+
+            <div>
+              <AnimatedSection delay={0.1}>
+                <p style={{ color: "#aaa", fontSize: "17px", lineHeight: 1.85 }}>
+                  Créée en 2019 par Tristan Escutary, Empower Corp est une entreprise
+                  de marketing direct spécialisée dans la vente, la formation et le
+                  coaching d&apos;équipes commerciales.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.2}>
+                <p style={{ marginTop: "20px", color: "#aaa", fontSize: "17px", lineHeight: 1.85 }}>
+                  Depuis sa création, l&apos;entreprise a réalisé plus de 50 000
+                  acquisitions clients pour le compte de ses partenaires grâce au canal
+                  de la vente directe.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <p style={{ marginTop: "20px", color: "#aaa", fontSize: "17px", lineHeight: 1.85 }}>
+                  Empower Corp s&apos;inscrit dans un réseau international d&apos;organisations
+                  spécialisées dans le marketing direct, présent dans plusieurs pays d&apos;Europe.
+                </p>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards image */}
+      <section style={{ paddingBottom: "120px" }}>
+        <div className="container-main">
+          <AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", aspectRatio: "16/10" }}>
+                <Image src="/images/tristan-stage.jpg" alt="Tristan sur scène" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              </div>
+              <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", aspectRatio: "16/10" }}>
+                <Image src="/images/entrepreneur-year.jpg" alt="Entrepreneur of the Year" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section style={{ paddingTop: "100px", paddingBottom: "120px", background: "#0a0a0a" }}>
+        <div className="container-main">
+          <AnimatedSection>
+            <p style={{ color: "#c8a97e", fontSize: "12px", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "20px" }}>
+              Chronologie
+            </p>
+            <h2 style={{ fontSize: "clamp(24px, 3vw, 32px)", fontWeight: 600, lineHeight: 1.3, marginBottom: "48px" }}>
+              Les étapes clés
+            </h2>
+          </AnimatedSection>
+
+          {timeline.map((item, i) => (
+            <AnimatedSection key={item.year} delay={i * 0.08}>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  gap: "24px",
+                  padding: "24px 0",
+                  borderTop: i === 0 ? "1px solid #1a1a1a" : "none",
+                  borderBottom: "1px solid #1a1a1a",
+                }}
+              >
+                <span style={{ fontSize: "14px", fontWeight: 600, color: "#c8a97e", fontFamily: "var(--font-mono), monospace", minWidth: "48px" }}>
+                  {item.year}
+                </span>
+                <span style={{ fontSize: "16px", color: "#bbb" }}>{item.event}</span>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
