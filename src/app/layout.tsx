@@ -24,8 +24,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Empower Corp — Marketing Direct, Leadership & Entrepreneuriat",
-    template: "%s — Empower Corp",
+    default: "Empower Corp | Marketing Direct, Leadership & Entrepreneuriat",
+    template: "%s | Empower Corp",
   },
   description:
     "Empower Corp forme une nouvelle génération de consultants commerciaux et de leaders directement sur le terrain. Rejoignez une organisation ambitieuse en France et en Europe.",
