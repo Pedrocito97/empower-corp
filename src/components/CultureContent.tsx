@@ -4,8 +4,8 @@ import AnimatedSection from "./AnimatedSection";
 import Image from "next/image";
 
 const images = [
-  { src: "/images/awards-ceremony.jpg", alt: "Cérémonie de remise de prix" },
-  { src: "/images/tristan-stage.jpg", alt: "Tristan Escutary sur scène" },
+  { src: "/images/awards-group-gala.jpg", alt: "Équipe Empower Corp au gala" },
+  { src: "/images/team-meeting-fresque.jpg", alt: "Réunion d'équipe" },
   { src: "/images/paintball.jpg", alt: "Paintball team building" },
   { src: "/images/team-neon.jpg", alt: "Soirée d'équipe" },
   { src: "/images/entrepreneur-year.jpg", alt: "Entrepreneur of the Year" },
@@ -16,6 +16,7 @@ const images = [
   { src: "/images/arcade-fun.jpg", alt: "Soirée arcade" },
   { src: "/images/team-restaurant.jpg", alt: "Restaurant d'équipe" },
   { src: "/images/team-dinner.jpg", alt: "Dîner d'équipe" },
+  { src: "/images/coaching-office.jpg", alt: "Coaching au bureau" },
 ];
 
 const events = [
@@ -117,10 +118,10 @@ export default function CultureContent() {
               </div>
             </AnimatedSection>
 
-            {/* Row 4 - 3 images */}
+            {/* Row 4 - 4 images */}
             <AnimatedSection delay={0.25}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {images.slice(9, 12).map((img) => (
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                {images.slice(9, 13).map((img) => (
                   <div
                     key={img.src}
                     style={{ borderRadius: "10px", overflow: "hidden", position: "relative", aspectRatio: "4/3" }}

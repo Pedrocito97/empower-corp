@@ -1,13 +1,13 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
+import FranceMap from "./FranceMap";
 import Image from "next/image";
 
 const timeline = [
-  { year: "2019", event: "Création d'Empower Corp à Rennes par Tristan Escutary" },
-  { year: "2021", event: "Ouverture de la deuxième agence à Nantes" },
-  { year: "2024", event: "Cap des 50 000 acquisitions clients franchi" },
-  { year: "2026", event: "Expansion prévue vers Angers, Tours et Rouen" },
+  { year: "2019", event: "Création d'Empower Corp à Marseille par Tristan Escutary" },
+  { year: "2021", event: "Empower Corp s'installe à Rennes" },
+  { year: "2026", event: "Ouverture de l'agence de Nantes" },
 ];
 
 export default function HistoireContent() {
@@ -20,7 +20,7 @@ export default function HistoireContent() {
             <AnimatedSection>
               <div style={{ position: "relative", borderRadius: "12px", overflow: "hidden", aspectRatio: "3/4", maxWidth: "420px" }}>
                 <Image
-                  src="/images/tristan-winner.jpg"
+                  src="/images/tristan-awards-london.jpg"
                   alt="Tristan Escutary, fondateur d'Empower Corp"
                   fill
                   sizes="(max-width: 1024px) 100vw, 420px"
@@ -36,7 +36,7 @@ export default function HistoireContent() {
             <div>
               <AnimatedSection delay={0.1}>
                 <p style={{ color: "#aaa", fontSize: "17px", lineHeight: 1.85 }}>
-                  Créée en 2019 par Tristan Escutary, Empower Corp est une entreprise
+                  Créée en 2019 à Marseille par Tristan Escutary, Empower Corp est une entreprise
                   de marketing direct spécialisée dans la vente, la formation et le
                   coaching d&apos;équipes commerciales.
                 </p>
@@ -74,6 +74,9 @@ export default function HistoireContent() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* France Map */}
+      <FranceMap />
 
       {/* Timeline */}
       <section style={{ paddingTop: "100px", paddingBottom: "120px", background: "#0a0a0a" }}>

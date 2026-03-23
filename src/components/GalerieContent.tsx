@@ -19,35 +19,13 @@ const images = [
   { src: "/images/coaching-office.jpg", alt: "Coaching au bureau" },
 ];
 
-export default function Culture() {
+export default function GalerieContent() {
   return (
-    <section id="culture" style={{ paddingTop: "140px", paddingBottom: "140px" }}>
+    <section style={{ paddingBottom: "120px" }}>
       <div className="container-main">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-          <AnimatedSection>
-            <p style={{ color: "#c8a97e", fontSize: "12px", letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "24px" }}>
-              Culture &amp; événements
-            </p>
-            <h2 style={{ fontSize: "clamp(28px, 4vw, 38px)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.25 }}>
-              Plus qu&apos;une entreprise, une organisation.
-            </h2>
-          </AnimatedSection>
-
-          <AnimatedSection delay={0.1}>
-            <p style={{ color: "#999", fontSize: "15px", lineHeight: 1.85, paddingTop: "4px" }}>
-              Rejoindre Empower Corp, c&apos;est intégrer une organisation dynamique
-              où l&apos;apprentissage passe par l&apos;expérience. Séminaires,
-              événements, rencontres avec d&apos;autres équipes du réseau en Europe
-              — ces moments permettent d&apos;échanger, d&apos;apprendre et de célébrer
-              les performances collectives.
-            </p>
-          </AnimatedSection>
-        </div>
-
-        {/* Gallery - 3 rows, varied sizes */}
-        <div style={{ marginTop: "64px", display: "flex", flexDirection: "column", gap: "12px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
           {/* Row 1 - 3 images */}
-          <AnimatedSection delay={0.15}>
+          <AnimatedSection delay={0.1}>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {images.slice(0, 3).map((img) => (
                 <div
@@ -61,7 +39,7 @@ export default function Culture() {
           </AnimatedSection>
 
           {/* Row 2 - 2 images wider */}
-          <AnimatedSection delay={0.2}>
+          <AnimatedSection delay={0.15}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {images.slice(3, 5).map((img) => (
                 <div
@@ -75,9 +53,9 @@ export default function Culture() {
           </AnimatedSection>
 
           {/* Row 3 - 4 images */}
-          <AnimatedSection delay={0.25}>
+          <AnimatedSection delay={0.2}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {images.slice(4, 8).map((img) => (
+              {images.slice(5, 9).map((img) => (
                 <div
                   key={img.src}
                   style={{ borderRadius: "10px", overflow: "hidden", position: "relative", aspectRatio: "1/1" }}
@@ -88,15 +66,15 @@ export default function Culture() {
             </div>
           </AnimatedSection>
 
-          {/* Row 4 - 5 images */}
-          <AnimatedSection delay={0.3}>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {images.slice(8, 13).map((img) => (
+          {/* Row 4 - 4 images */}
+          <AnimatedSection delay={0.25}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {images.slice(9, 13).map((img) => (
                 <div
                   key={img.src}
                   style={{ borderRadius: "10px", overflow: "hidden", position: "relative", aspectRatio: "4/3" }}
                 >
-                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:768px) 50vw, 25vw" style={{ objectFit: "cover" }} />
+                  <Image src={img.src} alt={img.alt} fill sizes="(max-width:768px) 100vw, 33vw" style={{ objectFit: "cover" }} />
                 </div>
               ))}
             </div>

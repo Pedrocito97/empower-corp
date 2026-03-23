@@ -52,7 +52,7 @@ export default function Agences() {
               <p style={{ fontSize: "11px", color: "#888", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", marginTop: "40px" }}>
                 Futures ouvertures
               </p>
-              {["Angers", "Tours", "Rouen"].map((city, i) => (
+              {["Angers", "Caen", "Rouen", "Tours", "Brest"].map((city, i) => (
                 <div
                   key={city}
                   style={{

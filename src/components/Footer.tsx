@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -12,6 +13,9 @@ export default function Footer() {
             <Link
               href="/"
               style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
                 fontSize: "17px",
                 fontWeight: 600,
                 letterSpacing: "0.08em",
@@ -20,6 +24,13 @@ export default function Footer() {
                 textTransform: "uppercase",
               }}
             >
+              <Image
+                src="/images/logo-empower.png"
+                alt="Empower Corp"
+                width={36}
+                height={30}
+                style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+              />
               Empower <span style={{ color: "#c8a97e" }}>Corp</span>
             </Link>
             <p style={{ marginTop: "12px", fontSize: "14px", color: "#888", lineHeight: 1.7, maxWidth: "320px" }}>
@@ -37,6 +48,8 @@ export default function Footer() {
                 { label: "Histoire", href: "/histoire" },
                 { label: "Parcours", href: "/parcours" },
                 { label: "Culture", href: "/culture" },
+                { label: "Galerie", href: "/galerie" },
+                { label: "FAQ", href: "/faq" },
               ].map((link) => (
                 <Link
                   key={link.href}

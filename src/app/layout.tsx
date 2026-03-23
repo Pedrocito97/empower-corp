@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   },
   description:
     "Empower Corp forme une nouvelle génération de consultants commerciaux et de leaders directement sur le terrain. Rejoignez une organisation ambitieuse en France et en Europe.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Empower Corp",
     description:

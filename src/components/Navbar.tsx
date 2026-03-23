@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -11,6 +12,8 @@ const navLinks = [
   { label: "Histoire", href: "/histoire" },
   { label: "Parcours", href: "/parcours" },
   { label: "Culture", href: "/culture" },
+  { label: "Galerie", href: "/galerie" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export default function Navbar() {
@@ -62,6 +65,9 @@ export default function Navbar() {
           <Link
             href="/"
             style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
               fontSize: "17px",
               fontWeight: 600,
               letterSpacing: "0.08em",
@@ -70,6 +76,13 @@ export default function Navbar() {
               textTransform: "uppercase",
             }}
           >
+            <Image
+              src="/images/logo-empower.png"
+              alt="Empower Corp"
+              width={36}
+              height={30}
+              style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
+            />
             Empower <span style={{ color: "#c8a97e" }}>Corp</span>
           </Link>
 
