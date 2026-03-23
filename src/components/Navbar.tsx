@@ -79,8 +79,8 @@ export default function Navbar() {
             <Image
               src="/images/logo-empower.png"
               alt="Empower Corp"
-              width={36}
-              height={30}
+              width={52}
+              height={44}
               style={{ objectFit: "contain", filter: "brightness(0) invert(1)" }}
             />
             Empower <span style={{ color: "#c8a97e" }}>Corp</span>
