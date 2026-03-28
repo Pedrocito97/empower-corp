@@ -155,7 +155,6 @@ export default function Hero() {
           {[
             { val: "50K+", label: "acquisitions" },
             { val: "2019", label: "depuis" },
-            { val: "5", label: "agences" },
           ].map((s) => (
             <div key={s.label} style={{ display: "flex", alignItems: "baseline", gap: "8px" }}>
               <span style={{ fontSize: "22px", fontWeight: 600, color: "#c8a97e" }}>

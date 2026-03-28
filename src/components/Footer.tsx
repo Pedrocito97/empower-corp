@@ -8,7 +8,7 @@ export default function Footer() {
     <footer style={{ borderTop: "1px solid #141414" }}>
       <div className="container-main" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         {/* Top row */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto_auto] gap-12 md:gap-16">
           <div>
             <Link
               href="/"
@@ -44,12 +44,11 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {[
-                { label: "Notre activité", href: "/activite" },
-                { label: "Histoire", href: "/histoire" },
-                { label: "Parcours", href: "/parcours" },
-                { label: "Culture", href: "/culture" },
-                { label: "Galerie", href: "/galerie" },
-                { label: "FAQ", href: "/faq" },
+                { label: "Notre activité", href: "/#activite" },
+                { label: "Histoire", href: "/#histoire" },
+                { label: "Parcours", href: "/#parcours" },
+                { label: "FAQ", href: "/#faq" },
+                { label: "Nous rejoindre", href: "/#rejoindre" },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -66,25 +65,29 @@ export default function Footer() {
 
           <div>
             <p style={{ fontSize: "11px", color: "#c8a97e", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px" }}>
-              Rejoindre
+              Suivez-nous
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-              <Link
-                href="/rejoindre"
+              <a
+                href="https://www.instagram.com/empower_corp/"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ fontSize: "13px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#ccc")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#898989")}
               >
-                Nous rejoindre
-              </Link>
-              <Link
-                href="/rejoindre#faq"
+                Instagram
+              </a>
+              <a
+                href="https://www.tiktok.com/@empower_corp_rennes"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ fontSize: "13px", color: "#898989", textDecoration: "none", transition: "color 0.3s" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#ccc")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#898989")}
               >
-                FAQ
-              </Link>
+                TikTok
+              </a>
             </div>
           </div>
         </div>

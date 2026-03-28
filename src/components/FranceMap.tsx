@@ -17,7 +17,6 @@ const cities: City[] = [
   { name: "Nantes", x: 20, y: 44, active: true, href: "https://maps.app.goo.gl/nantes-empower" },
   // Futures ouvertures
   { name: "Brest", x: 8, y: 30, active: false },
-  { name: "Caen", x: 28, y: 25, active: false },
   { name: "Rouen", x: 36, y: 23, active: false },
   { name: "Tours", x: 33, y: 47, active: false },
   { name: "Angers", x: 26, y: 47, active: false },

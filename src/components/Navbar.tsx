@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,12 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Notre activité", href: "/activite" },
-  { label: "Histoire", href: "/histoire" },
-  { label: "Parcours", href: "/parcours" },
-  { label: "Culture", href: "/culture" },
-  { label: "Galerie", href: "/galerie" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Notre activité", href: "/#activite" },
+  { label: "Histoire", href: "/#histoire" },
+  { label: "Parcours", href: "/#parcours" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -32,6 +30,21 @@ export default function Navbar() {
   }, [pathname]);
 
   const isHome = pathname === "/";
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      const hash = href.split("#")[1];
+      if (hash && isHome) {
+        e.preventDefault();
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+        setMobileOpen(false);
+      }
+    },
+    [isHome]
+  );
 
   return (
     <>
@@ -90,35 +103,31 @@ export default function Navbar() {
             className="hidden md:flex"
             style={{ alignItems: "center", gap: "36px" }}
           >
-            {navLinks.map((link) => {
-              const active = pathname === link.href;
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{
-                    fontSize: "13px",
-                    color: active ? "#eee" : "#888",
-                    textDecoration: "none",
-                    letterSpacing: "0.02em",
-                    transition: "color 0.3s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#eee")}
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = active ? "#eee" : "#888")
-                  }
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                style={{
+                  fontSize: "13px",
+                  color: "#888",
+                  textDecoration: "none",
+                  letterSpacing: "0.02em",
+                  transition: "color 0.3s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#eee")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              >
+                {link.label}
+              </Link>
+            ))}
             <Link
-              href="/rejoindre"
+              href="/#rejoindre"
+              onClick={(e) => handleNavClick(e, "/#rejoindre")}
               style={{
                 padding: "9px 22px",
-                background:
-                  pathname === "/rejoindre" ? "#c8a97e" : "transparent",
-                color: pathname === "/rejoindre" ? "#050505" : "#c8a97e",
+                background: "transparent",
+                color: "#c8a97e",
                 fontSize: "13px",
                 fontWeight: 500,
                 borderRadius: "6px",
@@ -131,10 +140,8 @@ export default function Navbar() {
                 e.currentTarget.style.color = "#050505";
               }}
               onMouseLeave={(e) => {
-                if (pathname !== "/rejoindre") {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.color = "#c8a97e";
-                }
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "#c8a97e";
               }}
             >
               Nous rejoindre
@@ -183,7 +190,7 @@ export default function Navbar() {
                 gap: "28px",
               }}
             >
-              {[{ label: "Accueil", href: "/" }, ...navLinks, { label: "Nous rejoindre", href: "/rejoindre" }].map(
+              {[{ label: "Accueil", href: "/" }, ...navLinks, { label: "Nous rejoindre", href: "/#rejoindre" }].map(
                 (link, i) => (
                   <motion.div
                     key={link.href}
@@ -193,13 +200,11 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
+                      onClick={(e) => handleNavClick(e, link.href)}
                       style={{
                         fontSize: "28px",
-                        fontWeight: pathname === link.href ? 500 : 300,
-                        color:
-                          pathname === link.href
-                            ? "#c8a97e"
-                            : "rgba(238,238,238,0.7)",
+                        fontWeight: 300,
+                        color: "rgba(238,238,238,0.7)",
                         textDecoration: "none",
                       }}
                     >

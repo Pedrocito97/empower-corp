@@ -2,6 +2,7 @@
 
 import AnimatedSection from "./AnimatedSection";
 import Image from "next/image";
+import Link from "next/link";
 
 const steps = [
   { title: "Fondation", desc: "Connaissance du produit, création du lien avec les consommateurs, bases de la vente directe." },
@@ -47,6 +48,28 @@ export default function ParcoursContent() {
               </div>
             </AnimatedSection>
           ))}
+          <AnimatedSection delay={0.3}>
+            <div style={{ marginTop: "48px", textAlign: "center" }}>
+              <Link
+                href="/#rejoindre"
+                style={{
+                  display: "inline-block",
+                  padding: "14px 32px",
+                  background: "#c8a97e",
+                  color: "#050505",
+                  fontWeight: 600,
+                  borderRadius: "6px",
+                  textDecoration: "none",
+                  fontSize: "14px",
+                  transition: "background 0.3s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#ddc5a3")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#c8a97e")}
+              >
+                Je veux rejoindre l&apos;aventure
+              </Link>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -66,7 +89,7 @@ export default function ParcoursContent() {
             <AnimatedSection delay={0.15}>
               <div>
                 <p style={{ color: "#999", fontSize: "15px", lineHeight: 1.85, marginBottom: "32px" }}>
-                  Les membres assistent à des sessions quotidiennes, accessibles selon le niveau et l&apos;évolution de chacun.
+                  Les commerciaux assistent à des sessions quotidiennes, accessibles selon le niveau et l&apos;évolution de chacun.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   {formations.map((f, i) => (

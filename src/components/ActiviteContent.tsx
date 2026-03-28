@@ -2,6 +2,7 @@
 
 import AnimatedSection from "./AnimatedSection";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle } from "lucide-react";
 
 export default function ActiviteContent() {
@@ -72,14 +73,10 @@ export default function ActiviteContent() {
                   pour présenter leurs services et développer leur base de soutiens.
                   Les campagnes se déroulent sur deux canaux : l&apos;événementiel et le résidentiel.
                 </p>
-                <div style={{ marginTop: "40px", display: "flex", gap: "48px" }}>
-                  <div>
-                    <p style={{ fontSize: "32px", fontWeight: 600, color: "#c8a97e" }}>50K+</p>
-                    <p style={{ fontSize: "13px", color: "#888", marginTop: "4px" }}>acquisitions</p>
-                  </div>
-                  <div>
-                    <p style={{ fontSize: "32px", fontWeight: 600, color: "#c8a97e" }}>2</p>
-                    <p style={{ fontSize: "13px", color: "#888", marginTop: "4px" }}>canaux d&apos;acquisition</p>
+                <div style={{ marginTop: "40px", display: "flex", justifyContent: "center" }}>
+                  <div style={{ textAlign: "center" }}>
+                    <p style={{ fontSize: "48px", fontWeight: 600, color: "#c8a97e" }}>50K+</p>
+                    <p style={{ fontSize: "14px", color: "#888", marginTop: "4px" }}>acquisitions</p>
                   </div>
                 </div>
               </div>
@@ -100,8 +97,15 @@ export default function ActiviteContent() {
                 &laquo; Créer de la croissance, développer des leaders et bâtir des organisations performantes. &raquo;
               </p>
             </blockquote>
+            <p style={{ marginTop: "16px", paddingLeft: "28px", fontSize: "13px", color: "#888" }}>
+              — Empower Corp
+            </p>
             <p style={{ marginTop: "32px", color: "#888", fontSize: "15px", lineHeight: 1.85, maxWidth: "560px" }}>
-              Les personnes les plus performantes peuvent évoluer vers des responsabilités de coaching,
+              Les personnes les plus performantes peuvent{" "}
+              <Link href="/#parcours" style={{ color: "#c8a97e", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                évoluer
+              </Link>{" "}
+              vers des responsabilités de coaching,
               de management et de développement de nouvelles agences.
             </p>
           </AnimatedSection>

@@ -95,7 +95,7 @@ export default function HomePreview() {
                 des agences en France, et un réseau international en Europe.
               </p>
               <Link
-                href="/activite"
+                href="/#activite"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -156,32 +156,26 @@ export default function HomePreview() {
           <AnimatedSection delay={0.1}>
             <div style={{ borderTop: "1px solid #151515" }}>
               <SectionLink
-                href="/activite"
+                href="#activite"
                 label="01"
                 title="Notre activité"
                 description="Développement commercial, vente directe et accompagnement de nos partenaires."
               />
               <SectionLink
-                href="/histoire"
+                href="#histoire"
                 label="02"
                 title="Notre histoire"
                 description="Fondée en 2019 par Tristan Escutary, Empower Corp a réalisé plus de 50 000 acquisitions."
               />
               <SectionLink
-                href="/parcours"
+                href="#parcours"
                 label="03"
                 title="Parcours & évolution"
                 description="Cinq étapes de développement, de la fondation à l'entrepreneuriat."
               />
               <SectionLink
-                href="/culture"
+                href="#rejoindre"
                 label="04"
-                title="Culture & événements"
-                description="Séminaires, rencontres européennes et vie d'équipe au quotidien."
-              />
-              <SectionLink
-                href="/rejoindre"
-                label="05"
                 title="Nous rejoindre"
                 description="Développez vos compétences et construisez votre avenir professionnel."
               />

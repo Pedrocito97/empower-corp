@@ -50,6 +50,10 @@ body {
   background-clip: text;
 }
 
+[id] {
+  scroll-margin-top: 80px;
+}
+
 /* Wrapper for all content */
 .container-main {
   max-width: 1140px;

@@ -6,28 +6,24 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Faut-il une expérience en vente pour rejoindre Empower Corp ?",
-    a: "Non. Une formation est proposée pour apprendre les bases et développer ses compétences progressivement.",
-  },
-  {
     q: "Comment fonctionne la rémunération ?",
     a: "La rémunération est basée sur la performance. Les ventes sont rémunérées chaque semaine, en fonction des résultats réalisés sur le terrain.",
   },
   {
     q: "Quel type de contrat est proposé ?",
-    a: "L'activité s'exerce sous contrat VDI (Vendeur à Domicile Indépendant) — un statut indépendant avec couverture sociale, sans avoir à créer d'entreprise.",
+    a: "L'activité s'exerce sous contrat VDI (Vendeur à Domicile Indépendant) — un statut indépendant avec couverture sociale.",
   },
   {
     q: "Y a-t-il des possibilités d'évolution ?",
     a: "Oui. Les plus performants peuvent évoluer vers le coaching, le développement d'équipe et la création de nouvelles agences.",
   },
   {
-    q: "Est-il possible de participer à des événements ?",
-    a: "Oui. Les équipes participent régulièrement à des séminaires et des rencontres avec d'autres équipes du réseau en Europe.",
+    q: "Comment se passent les événements et les voyages organisés par l'entreprise ?",
+    a: "Les voyages tels que les séminaires et les formations à l'étranger sont pris en charge par l'entreprise, basés sur différents KPIs.",
   },
   {
     q: "Quel profil recherchez-vous ?",
-    a: "Des personnes motivées, dynamiques et prêtes à apprendre. Aucune expérience requise — la motivation et le relationnel comptent avant tout.",
+    a: "Des personnes dynamiques, coachables et déterminées.",
   },
 ];
 
