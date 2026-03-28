@@ -13,13 +13,13 @@ interface City {
 
 const cities: City[] = [
   // Agences actives
-  { name: "Rennes", x: 22, y: 35, active: true },
-  { name: "Nantes", x: 20, y: 44, active: true, href: "https://maps.app.goo.gl/nantes-empower" },
+  { name: "Rennes", x: 29, y: 35, active: true },
+  { name: "Nantes", x: 30, y: 44, active: true, href: "https://maps.app.goo.gl/nantes-empower" },
   // Futures ouvertures
-  { name: "Brest", x: 8, y: 30, active: false },
-  { name: "Rouen", x: 36, y: 23, active: false },
-  { name: "Tours", x: 33, y: 47, active: false },
-  { name: "Angers", x: 26, y: 47, active: false },
+  { name: "Brest", x: 11, y: 33, active: false },
+  { name: "Rouen", x: 44, y: 23, active: false },
+  { name: "Tours", x: 43, y: 43, active: false },
+  { name: "Angers", x: 36, y: 42, active: false },
 ];
 
 function CityMarker({ city, index }: { city: City; index: number }) {
@@ -97,6 +97,39 @@ function CityMarker({ city, index }: { city: City; index: number }) {
 
   return dot;
 }
+
+/* Accurate France outline path (viewBox 0 0 100 100) */
+const francePath = `
+  M 54,9
+  C 52,10 50,11 49,12
+  C 48,14 47,17 46,19
+  C 44,21 42,22 40,23
+  L 32,24
+  C 31,22 30,21 29,22
+  C 28,24 29,27 29,31
+  C 26,31 22,30 20,30
+  C 16,30 12,32 10,34
+  C 9,36 10,37 14,37
+  C 18,39 20,41 20,41
+  C 22,42 25,43 25,46
+  C 26,49 28,51 32,53
+  C 32,58 32,62 32,67
+  C 31,72 30,76 30,77
+  C 29,78 28,79 31,81
+  C 34,83 40,86 50,86
+  C 55,86 58,83 58,80
+  C 60,78 64,77 67,78
+  C 72,79 76,80 82,78
+  C 84,77 85,76 86,75
+  C 86,72 84,68 82,64
+  C 82,58 82,55 77,53
+  C 80,48 84,42 85,40
+  C 86,36 87,33 87,31
+  C 88,28 88,27 77,24
+  C 72,22 68,18 65,15
+  C 62,13 58,11 54,9
+  Z
+`;
 
 export default function FranceMap() {
   return (
@@ -184,23 +217,24 @@ export default function FranceMap() {
               style={{
                 position: "relative",
                 width: "100%",
-                aspectRatio: "1/1.1",
+                aspectRatio: "1/1",
                 maxWidth: "500px",
                 margin: "0 auto",
               }}
             >
               {/* France SVG outline */}
               <svg
-                viewBox="0 0 200 220"
+                viewBox="0 0 100 100"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 style={{ width: "100%", height: "100%", position: "absolute", inset: 0 }}
               >
                 <path
-                  d="M95 8 L105 5 L115 10 L125 8 L138 15 L148 12 L155 18 L160 30 L165 35 L175 40 L180 50 L178 60 L182 70 L180 80 L175 88 L170 95 L172 105 L168 115 L170 125 L165 135 L160 142 L155 150 L148 158 L140 165 L135 175 L125 180 L118 185 L110 190 L100 195 L90 200 L80 205 L70 200 L60 195 L55 188 L50 180 L45 170 L40 160 L35 150 L30 140 L25 130 L22 120 L20 110 L18 100 L20 90 L25 82 L30 75 L28 65 L25 55 L30 48 L38 44 L42 38 L48 32 L55 28 L60 22 L68 18 L75 14 L82 10 L90 8 Z"
+                  d={francePath}
                   fill="rgba(200, 169, 126, 0.04)"
                   stroke="rgba(200, 169, 126, 0.15)"
-                  strokeWidth="0.8"
+                  strokeWidth="0.4"
+                  strokeLinejoin="round"
                 />
               </svg>
 
